@@ -17,11 +17,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-
-	<name>Acme Jobs</name>
-	<description>This is the Acme Jobs project for the students of Design &amp; Testing.</description>
 	
-	<artifactId>Acme-Jobs-22.0</artifactId>
+	<name>Hello-World</name>
+	<description>This is a Hello-World project for the students of Design &amp; Testing.</description>
+
+	<groupId>Acme</groupId>	
+	<artifactId>Hello-World-22.0</artifactId>
 	<version>22.0</version>
 	<packaging>war</packaging>
 
@@ -179,7 +180,7 @@
 
 		<dependency>
 			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<artifactId>mysql-connector-java</artifactId>			
 		</dependency>
 
 		<dependency>

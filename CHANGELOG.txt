@@ -10,4 +10,4 @@
 
 Year 2022
 
-22.0	This is a brand new version of Acme Jobs.
+22.0	This is a brand new project.

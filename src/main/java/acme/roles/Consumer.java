@@ -1,5 +1,5 @@
 /*
- * UserIdentity.java
+ * Consumer.java
  *
  * Copyright (C) 2012-2022 Rafael Corchuelo.
  *
@@ -10,21 +10,34 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.datatypes;
+package acme.roles;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
 
-import acme.framework.entities.DefaultUserIdentity;
+import acme.framework.roles.UserRole;
 import lombok.Getter;
 import lombok.Setter;
 
-@Embeddable
+@Entity
 @Getter
 @Setter
-public class UserIdentity extends DefaultUserIdentity {
+public class Consumer extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
+
+	// Attributes -------------------------------------------------------------
+
+	@NotBlank
+	protected String			company;
+
+	@NotBlank
+	protected String			sector;
+
+	// Derived attributes -----------------------------------------------------
+
+	// Relationships ----------------------------------------------------------
 
 }
