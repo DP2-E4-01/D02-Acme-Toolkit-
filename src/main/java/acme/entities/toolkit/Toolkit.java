@@ -1,7 +1,6 @@
-package acme.entities.tool;
+package acme.entities.toolkit;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -16,21 +15,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Tool extends AbstractEntity {
+public class Toolkit extends AbstractEntity {
 
-	//Serialisation identifier  ---------------------------------------------
+	//Serialisation identifier     ---------------------------------------------
 	
 	protected static final long	serialVersionUID= 1L;
 	
 	// Attributes
-	
-	@NotBlank
-	@Length(max = 100)
-	protected String name;
-	
-	@NotBlank
-	@Length(max = 100)
-	protected String technology;
 	
 	@NotBlank
 	@UniqueElements
@@ -38,12 +29,16 @@ public class Tool extends AbstractEntity {
 	protected String code;
 	
 	@NotBlank
-	@Length(max = 255)
-	protected String desripcion;
+	@Length(max = 100)
+	protected String title;
 	
 	@NotBlank
-	@Min(0)
-	protected Double retailprice;
+	@Length(max = 255)
+	protected String descripcion;
+	
+	@NotBlank
+	@Length(max = 255)
+	protected String assemblyNotes;
 	
 	@URL
 	protected String link;
