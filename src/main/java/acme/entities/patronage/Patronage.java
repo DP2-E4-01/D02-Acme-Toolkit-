@@ -1,8 +1,10 @@
 package acme.entities.patronage;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Min;
@@ -13,6 +15,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.patronagereport.PatronageReport;
 import acme.enums.Status;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
@@ -54,5 +57,8 @@ public class Patronage extends AbstractEntity {
 	
 	@URL
 	protected String link;
+	
+	@OneToMany
+	public List<PatronageReport> reports;
 	
 }
