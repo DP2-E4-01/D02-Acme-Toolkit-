@@ -28,6 +28,7 @@ public class Tool extends AbstractEntity {
 	@Length(max = 100)
 	protected String name;
 	
+	
 	@NotBlank
 	@Length(max = 100)
 	protected String technology;
@@ -39,7 +40,7 @@ public class Tool extends AbstractEntity {
 	
 	@NotBlank
 	@Length(max = 255)
-	protected String desripcion;
+	protected String description;
 	
 	@NotBlank
 	@Min(0)
