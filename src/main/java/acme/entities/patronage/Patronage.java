@@ -4,10 +4,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Min;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -17,6 +18,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.entities.patronagereport.PatronageReport;
 import acme.enums.Status;
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -30,35 +32,41 @@ public class Patronage extends AbstractEntity {
 
 	protected static final long serialVersionUID = 1L;
 	
-	public Inventor inventor;
-	
-	public Patron patron;
-	
-	public Status status;
+	@NotNull
+	protected Status status;
 	
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	@Column(unique=true)
-	public String code;
+	protected String code;
 	
 	@NotBlank
-	@Size(max = 255)
-	public String legalStuff;
+	@Size(min = 1, max = 255)
+	protected String legalStuff;
 	 
-	@Min(value = 0L)
-	public Float budget;
+	@NotNull
+	protected Money budget;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	public Date startsAt;
+	protected Date startsAt;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	public Date finishesAt;
+	protected Date finishesAt;
 	
 	@URL
 	protected String link;
 	
+	@ManyToOne
+	@Valid
+	protected Patron patron;
+	
+	@ManyToOne
+	@Valid
+	protected Inventor inventor;
+	
 	@OneToMany
-	public List<PatronageReport> reports;
+	@Valid
+	protected List<PatronageReport> patronageReports;
 	
 }
