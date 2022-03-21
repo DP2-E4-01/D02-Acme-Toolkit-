@@ -31,22 +31,20 @@ public class Tool extends AbstractEntity {
 	
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
+	@Pattern(regexp="(\\w{3})-(\\d{3})")
 	protected String code;
 
 	@NotBlank
 	@Length(min = 1, max = 255)
 	protected String description;
 
-	@NotBlank
 	protected Money retailprice;
 	
 	@URL
 	protected String link;
 	
-	/*
-	 @OnetoOne
-	 @Valid
-	 protected Toolkit toolkit;
-	 */
+	//@OneToOne
+	//@Valid
+	//protected Toolkit toolkit;
+	
 }

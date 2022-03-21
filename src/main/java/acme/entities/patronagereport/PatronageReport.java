@@ -30,7 +30,7 @@ public class PatronageReport extends AbstractEntity{
 	//Attributes
 	
 	@NotBlank
-	@Pattern(regexp="(patronage-code):(serial-number)")
+	@Pattern(regexp="(\\w{3})-(\\d{3})")
 	protected String seqNumber;
 	
 	@Temporal(TemporalType.TIMESTAMP)

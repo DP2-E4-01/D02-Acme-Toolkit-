@@ -35,7 +35,7 @@ public class Patronage extends AbstractEntity {
 	@NotNull
 	protected Status status;
 	
-	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
+	@Pattern(regexp = "(\\w{3})-(\\d{3})")
 	@Column(unique=true)
 	protected String code;
 	
@@ -66,7 +66,6 @@ public class Patronage extends AbstractEntity {
 	protected Inventor inventor;
 	
 	@OneToMany
-	@Valid
 	protected List<PatronageReport> patronageReports;
 	
 }

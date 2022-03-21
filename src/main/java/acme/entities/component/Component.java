@@ -26,10 +26,10 @@ public class Component extends AbstractEntity {
 	@Length(max = 100)
 	protected String name;
 
-	/*@ManyToOne
-	@Valid
-	protected Toolkit toolkit;
-	*/
+	//@ManyToOne
+	//@Valid
+	//protected Toolkit toolkit;
+	
 	
 	@NotBlank
 	@Length(max = 100)
