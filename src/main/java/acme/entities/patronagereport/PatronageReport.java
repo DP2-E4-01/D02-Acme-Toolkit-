@@ -30,7 +30,7 @@ public class PatronageReport extends AbstractEntity{
 	//Attributes
 	
 	@NotBlank
-	@Pattern(regexp="")
+	@Pattern(regexp="(\\w{3})-(\\d{3})")
 	protected String seqNumber;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,7 +39,7 @@ public class PatronageReport extends AbstractEntity{
 	protected Date createdAt;
 	
 	@NotBlank
-	@Length(max = 256)
+	@Length(min = 1, max = 255)
 	protected String memorandum;
 	
 	@URL
